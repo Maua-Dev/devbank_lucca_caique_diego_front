@@ -1,0 +1,13 @@
+.inputAPI{
+    width: 80%;
+    height: 80px;
+    text-align: center;
+    background-color: rgb(128, 172, 255);
+    border: none;
+    border-radius: 10px;
+    font-size: xx-large;
+}
+
+.inputAPI::placeholder{
+    color: rgb(41, 51, 190);
+}

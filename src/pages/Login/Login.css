@@ -1,5 +1,23 @@
-#container{
-    background: rgba(0,115,230,.05);
-    width: 100%;
+.container {
+    background: rgba(0, 115, 230, 0.05);
+    width: 100vw;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-menor {
+    width: 100vw;
+    background: rgba(0, 115, 230, 0.25);
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    gap: 10%;
+    position: relative;
+}
+.logo{
+    width: 52%;
 }

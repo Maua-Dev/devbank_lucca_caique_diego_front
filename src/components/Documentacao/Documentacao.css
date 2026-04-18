@@ -1,0 +1,22 @@
+.documentacao{
+    border: none;
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    background-color: white;
+    transition: all 0.5s;
+    font-size: 90px;
+    text-align: center;
+    color: rgb(41, 51, 190);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.documentacao:hover{
+    background-color: rgb(255, 119, 119);
+}
