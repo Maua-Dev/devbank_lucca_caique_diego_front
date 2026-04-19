@@ -3,10 +3,10 @@
     flex-direction: column;
     gap: 12px;
     width: 260px;
-    padding: 12px;
     background: #f0f7ff;
     border-radius: 16px;
     margin-bottom: 20px;
+    transition: all 0.3s;
 }
 
 .cardCedula {
@@ -19,6 +19,7 @@
     font-size: 3.5rem;
     justify-content: center;
     align-items: center;
+    transition: all 0.3s;
 }
 
 .spanrs {
@@ -28,6 +29,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: all 0.3s;
 }
 
 .containerMenor > p {

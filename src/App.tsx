@@ -9,7 +9,7 @@ function App() {
             <Cedula valor={5}></Cedula>
             <Cedula valor={10}></Cedula>
             <Cedula valor={20}></Cedula>
-            <Cedula valor={50}></Cedula>
+            <Cedula valor={50}></Cedula>    
         </>
     )
 }
