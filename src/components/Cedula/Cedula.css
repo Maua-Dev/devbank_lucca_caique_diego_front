@@ -14,12 +14,16 @@
     background: #8dbdf2;
     border: 10px solid #a0cbfa;
     border-radius: 12px;
-    display: grid;
-    place-items: center;
+    display: flex;
     color: white;
-    font: 500 3.5rem sans-serif;
+    font-size: 3.5rem;
+    justify-content: center;
+    align-items: center;
 }
 
+.spanrs {
+    font-size: 2.75rem;
+}
 .containerMenor {
     display: flex;
     justify-content: space-between;
@@ -49,10 +53,6 @@
     border: none;
     font: bold 1.4rem sans-serif;
     cursor: pointer;
-}
-
-.container:hover {
-    background: #fff0f3; 
 }
 
 .container:hover .cardCedula {

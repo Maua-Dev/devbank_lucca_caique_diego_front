@@ -11,7 +11,8 @@ export default function Cedula({ valor }: ICedula) {
     return (
         <div className="container">
             <div className="cardCedula">
-                <p>R$ {valor}</p>
+                <span className="spanrs">R$</span>
+                <span>{valor}</span>
             </div>
             <div className="containerMenor">
                 <p>Quantidade</p>
