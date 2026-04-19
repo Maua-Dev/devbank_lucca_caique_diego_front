@@ -1,0 +1,68 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 260px;
+    background: #f0f7ff;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    transition: all 0.3s;
+}
+
+.cardCedula {
+    height: 140px;
+    background: #8dbdf2;
+    border: 10px solid #a0cbfa;
+    border-radius: 12px;
+    display: flex;
+    color: white;
+    font-size: 3.5rem;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.spanrs {
+    font-size: 2.75rem;
+}
+.containerMenor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.containerMenor > p {
+    background: #b8d7f9;
+    color: #1a5fb4;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 12px;
+    margin: 0;
+}
+
+.containerMenor div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: white;
+    padding: 6px 12px;
+    border-radius: 12px;
+}
+
+.containerMenor button {
+    background: none;
+    border: none;
+    font: bold 1.4rem sans-serif;
+    cursor: pointer;
+}
+
+.container:hover .cardCedula {
+    background: #f796a1; 
+    border-color: #fcc9d1; 
+}
+
+.container:hover .containerMenor > p {
+    background: #fcc9d1; 
+    color: #d62839;
+}
