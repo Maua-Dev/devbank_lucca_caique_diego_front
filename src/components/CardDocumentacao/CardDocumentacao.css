@@ -1,0 +1,19 @@
+.card-documentacao {
+    width: 75vw;
+    height: 10vh;
+    text-align: start;
+    padding-left: 2%;
+    font-size: 2.75rem;
+    font-weight: 600;
+    background-color: #8dbdf2;
+    color: #2558ff;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.card-documentacao:hover {
+    color: crimson;
+    background-color: rgb(253, 149, 149);
+}
