@@ -17,3 +17,10 @@
     color: crimson;
     background-color: rgb(253, 149, 149);
 }
+
+.post {
+}
+
+.hidden {
+    display: none;
+}
