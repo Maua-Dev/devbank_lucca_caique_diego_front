@@ -18,9 +18,49 @@
     background-color: rgb(253, 149, 149);
 }
 
-.post {
+.container-documentacao {
+    background-color: #a3caf5;
+    padding: 20px;
+    width: 75vw;
+    
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    color: #2558ff;
+}
+
+.desc {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: large;
+    font-weight: 600;
+}
+
+.request {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: large;
+    font-weight: 500;
+    margin-top: 15px;
+}
+.response {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: large;
+    font-weight: 500;
+    margin-top: 15px;
 }
 
 .hidden {
     display: none;
+}
+
+.ligado {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    height: 12vh;
+    font-size: 3rem;
 }
