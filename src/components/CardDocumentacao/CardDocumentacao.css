@@ -1,0 +1,94 @@
+.card-documentacao {
+    width: 75vw;
+    height: 10vh;
+    text-align: start;
+    padding-left: 2%;
+    font-size: 2.75rem;
+    font-weight: 600;
+    background-color: #8dbdf2;
+    color: #2558ff;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.card-documentacao:hover {
+    color: crimson;
+    background-color: rgb(253, 149, 149);
+}
+
+.container-documentacao {
+    background-color: #a3caf5;
+    padding: 20px;
+    width: 75vw;
+
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    color: #2558ff;
+}
+
+.desc {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: large;
+    font-weight: 600;
+}
+
+.request {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: large;
+    font-weight: 500;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: all 0.5s;
+    position: relative;
+}
+
+.request:hover {
+    background-color: rgb(218, 234, 255);
+    color: #7090fa;
+}
+.response {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: large;
+    font-weight: 500;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: all 0.5s;
+    position: relative;
+}
+
+.response:hover {
+    background-color: rgb(218, 234, 255);
+    color: #7090fa;
+}
+
+.hidden {
+    display: none;
+    transition: all 1s;
+}
+
+.ligado {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    height: 12vh;
+    font-size: 3rem;
+}
+
+.icone-request{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.icone-response{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
