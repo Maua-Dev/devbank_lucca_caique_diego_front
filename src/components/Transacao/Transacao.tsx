@@ -6,10 +6,21 @@ interface ITransacao {
     saldo: number;
 }
 
+function handleCardColor(texto: string): string {
+    let cor: string = "red";
+    if (texto == "Deposito") {
+        cor = "green"
+    }
+    return cor;
+}
+
 export default function Transacao({ texto, valor, saldo }: ITransacao) {
+
+    const cor = handleCardColor(texto)
+
     return (
         <div className="card">
-            <div className="Acao">
+            <div className="Acao" style={{ "background": cor }}>
                 <p>{texto}</p>
             </div>
             <div className="Inferior">
