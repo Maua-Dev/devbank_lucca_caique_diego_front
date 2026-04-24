@@ -43,19 +43,19 @@ export default function Transacao({ texto, valor, data, saldo }: ITransacao) {
 
     return (
         <div className="card">
-            <div className="Acao" style={{ "background": cor }}>
+            <div className="acao" style={{ "background": cor }}>
                 <p>{texto}</p>
             </div>
-            <div className="Inferior">
-                <div className="Valor">
+            <div className="inferior">
+                <div className="valor">
                     <p>VALOR:</p>
                     <span>R$ {valor} </span>
                 </div>
-                <div className="Data">
+                <div className="data">
                     <p>DATA:</p>
                     <span>{mes} {data.getDate()} {data.getFullYear()} {formatarNum(data.getHours())}:{formatarNum(data.getMinutes())}:{formatarNum(data.getSeconds())}</span>
                 </div>
-                <div className="Saldo">
+                <div className="saldo">
                     <p>SALDO:</p>
                     <span>R$ {saldo} </span>
                 </div>
