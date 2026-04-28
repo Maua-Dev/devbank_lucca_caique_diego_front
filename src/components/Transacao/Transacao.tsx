@@ -3,44 +3,36 @@ import "./Transacao.css";
 interface ITransacao {
     texto: string;
     valor: number;
-    data: Date,
+    data: number;
     saldo: number;
-}
-
-function formatarNum(numero: number): string {
-    return String(numero).padStart(2, "0");
+    id: string;
 }
 
 function handleCardColor(texto: string): string {
-    let cor: string = "red";
-    if (texto == "Deposito") {
-        cor = "green"
-    }
-    return cor;
+    return texto === "Deposito" ? "green" : "red";
 }
 
-export default function Transacao({ texto, valor, data, saldo }: ITransacao) {
-
-    const cor = handleCardColor(texto)
-    const mes = data.toLocaleDateString('pt-BR', { month: 'long' }).slice(0, 3);
+export default function Transacao({ texto, valor, data, saldo, id }: ITransacao) {
+    const dataNova = new Date(data);
+    const cor = handleCardColor(texto);
 
     return (
-        <div className="card">
-            <div className="acao" style={{ "background": cor }}>
+        <div className="card" id={id}>
+            <div className="acao" style={{ background: cor }}>
                 <p>{texto}</p>
             </div>
             <div className="inferior">
                 <div className="valor">
                     <p>VALOR:</p>
-                    <span>R$ {valor} </span>
+                    <span>R$ {valor}</span>
                 </div>
                 <div className="data">
                     <p>DATA:</p>
-                    <span>{mes} {data.getDate()} {data.getFullYear()} {formatarNum(data.getHours())}:{formatarNum(data.getMinutes())}:{formatarNum(data.getSeconds())}</span>
+                    <span>{dataNova.toLocaleString()}</span>
                 </div>
                 <div className="saldo">
                     <p>SALDO:</p>
-                    <span>R$ {saldo} </span>
+                    <span>R$ {saldo}</span>
                 </div>
             </div>
         </div>

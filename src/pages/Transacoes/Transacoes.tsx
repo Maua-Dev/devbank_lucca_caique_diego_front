@@ -4,7 +4,7 @@ import Documentacao from "../../components/Documentacao/Documentacao"
 import Topbar from "../../components/Topbar/Topbar"
 import { Users } from "../../mock/User"
 import Transacao from "../../components/Transacao/Transacao"
-
+import { transactions } from "../../mock/Transactions"
 
 export default function Transacoes() {
     return (
@@ -12,17 +12,27 @@ export default function Transacoes() {
             <Topbar user={Users.user1}>
                 <Documentacao fixo={false} />
             </Topbar>
+
             <div className="historico-container">
                 <span>Histórico de Transações</span>
             </div>
+
             <div className="historico" id="historico">
-                <Transacao data={new Date()} saldo={10} texto="Saque" valor={1000}/>
-                <Transacao data={new Date()} saldo={10} texto="Saque" valor={1000}/>
+                {transactions.map((transaction) => (
+                    <Transacao
+                        key={transaction.id}
+                        data={transaction.data}
+                        id={transaction.id}
+                        saldo={transaction.saldo}
+                        texto={transaction.tipo}
+                        valor={transaction.valor}
+                    />
+                ))}
             </div>
+
             <div className="botao-componente">
-                <Botao texto="Voltar"/>
+                <Botao texto="Voltar" />
             </div>
         </div>
-
     )
 }
