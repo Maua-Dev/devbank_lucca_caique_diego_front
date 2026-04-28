@@ -6,6 +6,7 @@
     border: none;
     border-radius: 10px;
     font-size: 26px;
+    flex:90%
 }
 
 .inputAPI::placeholder {
@@ -32,4 +33,11 @@
     padding: 10px;
     /* border: 1px solid red; */
     height: fit-content;
+    transition: all 0.3s;
+    color: rgb(41, 51, 190);
+    flex:10%;
+}
+
+.container-input-api button:hover{
+    color: red;
 }
