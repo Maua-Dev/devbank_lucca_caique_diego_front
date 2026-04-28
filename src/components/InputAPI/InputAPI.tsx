@@ -5,9 +5,10 @@ interface IInputAPI {
     value?: string;
     onChange: (e: ChangeEvent<HTMLInputElement>) => void;
     children?: PropsWithChildren<ReactNode>;
+    readOnly?: boolean;
 }
 
-export default function InputAPI({ value, onChange, children }: IInputAPI) {
+export default function InputAPI({ value, onChange, children, readOnly }: IInputAPI) {
     return (
         <div className="container-input-api">
             <input
@@ -18,6 +19,7 @@ export default function InputAPI({ value, onChange, children }: IInputAPI) {
                 className="inputAPI"
                 value={value}
                 onChange={onChange}
+                readOnly={readOnly}
             />
             {children}
         </div>

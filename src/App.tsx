@@ -5,13 +5,13 @@ import { FaPencilAlt } from "react-icons/fa";
 
 function App() {
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const [text, setText] = useState("")
+    const [api, setApi] = useState("https://y5klzz3x33bqv3kytn4swkcwji0vlfhw.lambda-url.us-east-1.on.aws")
+    const [text2, setText2] = useState("")
 
     return (
         <>
-            <InputAPI onChange={(e) => setText(e.target.value)} value='https://y5klzz3x33bqv3kytn4swkcwji0vlfhw.lambda-url.us-east-1.on.aws'><button><FaPencilAlt /></button></InputAPI>
-            <InputAPI onChange={(e) => setText(e.target.value)} value=''></InputAPI>
+            <InputAPI onChange={(e) => setApi(e.target.value)} value={api} readOnly={true}><button><FaPencilAlt /></button></InputAPI>
+            <InputAPI onChange={(e) => setText2(e.target.value)} value={text2}></InputAPI>
         </>
     )
 }
