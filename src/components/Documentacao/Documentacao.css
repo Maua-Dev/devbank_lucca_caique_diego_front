@@ -4,9 +4,6 @@
     width: 100px;
     height: 100px;
     cursor: pointer;
-    position: absolute;
-    right: 32px;
-    top: 32px;
     background-color: white;
     transition: all 0.5s;
     font-size: 90px;

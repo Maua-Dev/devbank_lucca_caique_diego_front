@@ -1,10 +1,10 @@
-import Transacao from "./components/Transacao/Transacao"
+import './App.css'
 
 function App() {
 
     return (
         <>
-            <Transacao saldo={10} data={new Date()} texto="Saque" valor={100}></Transacao>
+            
         </>
     )
 }
