@@ -6,7 +6,7 @@ function App() {
 
     return (
         <>
-            <CardSaldo texto = 'oi' boxSide='left'></CardSaldo>
+            <CardSaldo texto = 'oi' boxSide='right'></CardSaldo>
         </>
     )
 }

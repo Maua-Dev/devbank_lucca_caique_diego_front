@@ -2,25 +2,29 @@ import "./CardSaldo.css";
 
 interface ICardSaldo {
     texto: string;
-    boxSide: string;
+    boxSide: 'left' | 'right' | 'none';
 }
 
-// function handleBoxSide(boxSide:string){
-//    let lado = document.getElementById('a');
-//    lado.style.float=boxSide;
-// }
+export default function CardSaldo({ texto, boxSide }: ICardSaldo) {
+    const isLeft = boxSide === 'left';
 
-
-export default function CardSaldo({ texto, boxSide}: ICardSaldo) {
-    // handleBoxSide (boxSide)
     return (
         <div className="card-superior">
+            {isLeft && (
+                <div className="saldo">
+                    <p>{texto}</p>
+                </div>
+            )}
+
             <div className="texto">
                 <p>{texto}</p>
             </div>
-            <div className="saldo" id="a" >
-                <p>{texto}</p>
-            </div>
-        </div>
+
+            {!isLeft && (
+                <div className="saldo">
+                    <p>{texto}</p>
+                </div>
+            )}
+        </div >
     );
 }
