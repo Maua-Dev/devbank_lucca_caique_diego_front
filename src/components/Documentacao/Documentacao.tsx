@@ -5,16 +5,17 @@ interface IDocumentacao {
 }
 
 export default function Documentacao({ fixo }: IDocumentacao) {
-    if (fixo) {
-        const doc = document.getElementById("documentacao")
-        if (doc) {
-            doc.style.position = "absolute"
-            doc.style.right = "32px"
-            doc.style.top = "32px"
+    const style = fixo
+        ? {
+            position: "absolute" as const,
+            right: "32px",
+            top: "32px",
         }
+        : undefined
 
-    }
     return (
-        <button className="documentacao" id="documentacao">?</button>
+        <button className="documentacao" id="documentacao" style={style}>
+            ?
+        </button>
     )
 }
