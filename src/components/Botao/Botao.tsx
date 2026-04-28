@@ -2,7 +2,7 @@ import "./Botao.css"
 
 interface IBotao{
     texto:string;
-    onClick?():()=> void;
+    onClick?:()=> void;
 }
 
 export default function Botao({texto, onClick}:IBotao){
