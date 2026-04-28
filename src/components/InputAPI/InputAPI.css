@@ -1,13 +1,35 @@
-.inputAPI{
+.inputAPI {
     width: 80%;
     height: 80px;
     text-align: center;
     background-color: rgb(128, 172, 255);
     border: none;
     border-radius: 10px;
-    font-size: xx-large;
+    font-size: 26px;
 }
 
-.inputAPI::placeholder{
+.inputAPI::placeholder {
     color: rgb(41, 51, 190);
+}
+
+.container-input-api {
+    width: 80%;
+    height: 80px;
+    text-align: center;
+    background-color: rgb(128, 172, 255);
+    border: none;
+    border-radius: 10px;
+    font-size: 26px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.container-input-api button {
+    background-color: rgb(0, 0, 0, 0);
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px;
+    /* border: 1px solid red; */
+    height: fit-content;
 }
