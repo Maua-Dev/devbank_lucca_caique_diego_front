@@ -3,11 +3,11 @@
     align-items: center;
     background-color: #0073e6;
     padding: 20px;
-    height: 120px;
+    height: 20vh;
 }
 
 .logo-topbar{
-    flex: 80%;
+    flex: 70%;
 }
 
 .right-topbar{
