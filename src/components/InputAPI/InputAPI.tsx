@@ -1,7 +1,9 @@
 import "./InputAPI.css"
+import { ChangeEvent } from "react"
+
 interface IInputAPI {
     value: string;
-    onChange: (e) => void;
+    onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 export default function InputAPI({ value, onChange }: IInputAPI) {
