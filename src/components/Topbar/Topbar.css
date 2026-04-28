@@ -4,6 +4,7 @@
     background-color: #0073e6;
     padding: 20px;
     height: 20vh;
+    max-height: 150px;
 }
 
 .logo-topbar{
@@ -19,6 +20,7 @@
 .card-topbar{
     background-color: white;
     padding: 10px 20px;
+    padding-right: 45px;
     display: flex;
     flex-direction: column;
     gap: 10px;
