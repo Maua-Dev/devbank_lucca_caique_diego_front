@@ -1,0 +1,41 @@
+.card {
+    background: #9fd4ff;
+    color: black;
+    display: flex;
+    padding: 10px;
+    padding-bottom: 20px;
+    width: 80%;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 15px;
+    flex-direction: column;
+    gap:20px
+}
+
+.acao {
+    font-size: 24px;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    width: 95%;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.inferior {
+    display: flex;
+    flex-direction: row;
+    column-gap: 80px;
+    text-align: center;
+    justify-content: center;
+    color: rgb(0, 115, 230);
+    font-size: 30px;
+    /* border: 1px solid red; */
+    width: 100%;
+}
+
+.inferior span {
+    font-size: 20px;
+    padding-top: 5px;
+}
