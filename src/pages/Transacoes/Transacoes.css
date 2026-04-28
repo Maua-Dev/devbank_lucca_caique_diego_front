@@ -1,0 +1,30 @@
+.container-transacoes{
+    min-height: 100dvh;
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+}
+
+.historico-container{
+    background-color: rgb(110, 184, 248);
+    color: white;
+    width: 70%;
+    align-self: center;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.historico{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.botao-componente{
+    align-self: center;
+}
