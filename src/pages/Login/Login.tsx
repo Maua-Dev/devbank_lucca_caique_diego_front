@@ -12,7 +12,7 @@ export default function Login() {
     return (
         <div className="container">
             <div className="container-menor">
-                <Documentacao/>
+                <Documentacao fixo={true}/>
                 <img src="src/assets/logo_devbank.png" alt="logo devbank" className="logo" />
 
                 <InputAPI onChange={(e) => setValue(e.target.value)} value={value}></InputAPI>
