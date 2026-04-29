@@ -1,0 +1,29 @@
+.containerHome {
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+}
+
+
+
+
+.containerSaldo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+.containerBotoes {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    
+}
+
+.containerInput {
+    display: flex;
+    justify-content: center;
+}

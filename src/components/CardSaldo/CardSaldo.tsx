@@ -2,10 +2,11 @@ import "./CardSaldo.css";
 
 interface ICardSaldo {
     texto: string;
+    saldo: number;
     boxSide: 'left' | 'right' | 'none';
 }
 
-export default function CardSaldo({ texto, boxSide }: ICardSaldo) {
+export default function CardSaldo({ texto, boxSide, saldo }: ICardSaldo) {
     const isLeft = boxSide === 'left';
 
     return (
@@ -21,8 +22,8 @@ export default function CardSaldo({ texto, boxSide }: ICardSaldo) {
             </div>
 
             {!isLeft && (
-                <div className="saldo">
-                    <p>{texto}</p>
+                <div className="saldoTransacao">
+                    <p>Saldo: R${saldo}</p>
                 </div>
             )}
         </div >
