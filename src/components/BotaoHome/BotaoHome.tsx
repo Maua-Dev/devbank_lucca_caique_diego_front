@@ -1,15 +1,17 @@
-import { Button as ButtonAntd, ButtonProps } from 'antd';
 import './BotaoHome.css';
 
+interface IBotaoHome {
+  texto: string;
+  onClick?: ()=> void; 
+  id: string;
+}
 
-const Button = ({ children, ...props }: ButtonProps) => {
+function BotaoHome({texto, onClick, id}: IBotaoHome){
   return (
-    <ButtonAntd className="botao" {...props}>
-      {children}
-    </ButtonAntd>
-  );
-};
+    <button className='botaoHome' onClick={onClick} id={id}>{texto}</button>
+  )
+} 
 
 
-export default Button;
+export default BotaoHome;
 

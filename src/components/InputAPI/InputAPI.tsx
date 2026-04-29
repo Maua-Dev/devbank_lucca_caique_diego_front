@@ -21,7 +21,7 @@ export default function InputAPI({ value, onChange, children, readOnly }: IInput
                 onChange={onChange}
                 readOnly={readOnly}
             />
-            {children}
+            <button>{children}</button>
         </div>
     )
 }
