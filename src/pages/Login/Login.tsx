@@ -20,7 +20,7 @@ export default function Login() {
             }
             return;
         }
-        navigate("/transacoes")
+        navigate("/home")
     }
 
     return (
