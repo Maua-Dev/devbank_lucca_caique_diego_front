@@ -5,8 +5,11 @@ import Topbar from "../../components/Topbar/Topbar"
 import { Users } from "../../mock/User"
 import Transacao from "../../components/Transacao/Transacao"
 import { transactions } from "../../mock/Transactions"
+import { useNavigate } from "react-router"
+
 
 export default function Transacoes() {
+    const navigate = useNavigate();
     return (
         <div className="container-transacoes">
             <Topbar user={Users.user1}>
@@ -31,7 +34,7 @@ export default function Transacoes() {
             </div>
 
             <div className="botao-componente">
-                <Botao texto="Voltar" />
+                <Botao texto="Voltar" onClick={() => navigate("/home")} />
             </div>
         </div>
     )
