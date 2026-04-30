@@ -13,8 +13,9 @@ export function handleTransaction(
     valor: number,
     timestamp: number,
     saldoAtual: number,
-    id: string = transactions.length != 0 ? String(Number(transactions[transactions.length - 1]["id"]) + 1) : "1"
+    id: string = String(transactions.length + 1)
 ): TransacaoData {
+    localStorage.setItem("saldo", String(saldoAtual));
     const newTransaction = {
         "id": id,
         "tipo": tipo,
