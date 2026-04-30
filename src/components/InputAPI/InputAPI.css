@@ -41,3 +41,7 @@
 .container-input-api button:hover{
     color: red;
 }
+
+.hidden{
+    display: none;
+}
