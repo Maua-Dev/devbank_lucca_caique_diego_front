@@ -3,7 +3,7 @@ import { ChangeEvent, PropsWithChildren, ReactNode } from "react"
 
 interface IInputAPI {
     value?: string;
-    onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+    onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
     children?: PropsWithChildren<ReactNode>;
     readOnly?: boolean;
 }
