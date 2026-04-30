@@ -14,7 +14,7 @@ export default function Home () {
         <div className='containerHome'>
             <Topbar user={Users.user1}><Documentacao fixo={false}/></Topbar>
             <div className='containerSaldo'>
-                <CardSaldo boxSide='right' texto='O que você deseja fazer?' saldo={1000} ></CardSaldo>
+                <CardSaldo boxSide='right' texto='O que você deseja fazer?' saldo={1000}></CardSaldo>
             </div>
             <div className='containerBotoes'>
                 <BotaoHome texto='Depositar' id='1' onClick={()=> navigate('/depositar')}></BotaoHome>

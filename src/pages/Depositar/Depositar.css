@@ -1,0 +1,23 @@
+.containerDepositar{
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+}
+
+.container-cedulas{
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
+    justify-content: center;
+    gap: 20px;
+    width: 90%;
+}
+.p-cedulas{
+    font-size: 2.2rem;
+    width: 25%;
+}
+.container-botoes-depositar{
+    display: flex;
+    margin: auto;
+    gap: 25px;
+}
