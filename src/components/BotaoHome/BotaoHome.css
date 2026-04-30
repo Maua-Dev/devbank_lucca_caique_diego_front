@@ -18,5 +18,6 @@
     color: red !important;
     border-radius: 15px;
     border: 15px solid #f7c4c4 !important;
+    cursor:pointer;
 }
 
