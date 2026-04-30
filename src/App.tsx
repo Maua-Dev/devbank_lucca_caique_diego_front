@@ -4,6 +4,7 @@ import Transacoes from './pages/Transacoes/Transacoes';
 import Login from './pages/Login/Login';
 import Home from './pages/Home/Home';
 import Depositar from './pages/Depositar/Depositar';
+import Sacar from './pages/Sacar/Sacar';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
                     <Route path="/transacoes" element={<Transacoes />} />
                     <Route path="/home" element={<Home />} />
                     <Route path="/depositar" element={<Depositar />} />
+                    <Route path="/sacar" element={<Sacar />} />
                 </Routes>
             </BrowserRouter>
         </>
