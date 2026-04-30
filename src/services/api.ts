@@ -9,3 +9,7 @@ export async function get(endpoint: string = "") {
 export async function getUser() {
     return await get();
 }
+
+export async function getHistory(endpoint: string) {
+    return await get(endpoint);
+}
