@@ -5,23 +5,28 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import Botao from "../../components/Botao/Botao"
 import Documentacao from "../../components/Documentacao/Documentacao"
-import { Users } from "../../mock/User"
+import { get } from "../../services/api"
 
 export default function Login() {
-
     const [value, setValue] = useState("")
     const [fixo] = useState(true)
     const navigate = useNavigate()
 
-    function handleStorage(value: string): void {
-        localStorage.setItem("saldo", "1000");
-        localStorage.setItem("nome", Users.user1.nome);
-        localStorage.setItem("agencia", Users.user1.agencia);
-        localStorage.setItem("conta", Users.user1.conta);
-        sessionStorage.setItem("URL_API", value)
+    async function getUser(url: string) {
+        sessionStorage.setItem("URL_API", url);
+        try {
+            const user = await get();
+            localStorage.setItem("saldo", user.current_balance);
+            localStorage.setItem("nome", user.name);
+            localStorage.setItem("agencia", user.agency);
+            localStorage.setItem("conta", user.account);
+        } catch (erro) {
+            console.error(erro);
+            localStorage.setItem("saldo", "0");
+        }
     }
 
-    function handleLogin(url: string) {
+    async function handleLogin(url: string) {
         if (url != "https://y5klzz3x33bqv3kytn4swkcwji0vlfhw.lambda-url.us-east-1.on.aws") {
             const p = document.getElementById("p-aviso");
             if (p) {
@@ -29,6 +34,7 @@ export default function Login() {
             }
             return;
         }
+        await getUser(url);
         navigate("/home")
     }
 
@@ -40,7 +46,7 @@ export default function Login() {
 
                 <InputAPI onChange={(e) => setValue(e.target.value)} value={value}></InputAPI>
                 <p className="p-aviso" id="p-aviso"></p>
-                <Botao texto="Entrar" onClick={() => { handleLogin(value); handleStorage(value) }}></Botao>
+                <Botao texto="Entrar" onClick={() => handleLogin(value)}></Botao>
             </div>
         </div>
     )

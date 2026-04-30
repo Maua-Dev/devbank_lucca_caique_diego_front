@@ -4,20 +4,34 @@ import Documentacao from "../../components/Documentacao/Documentacao"
 import Topbar from "../../components/Topbar/Topbar"
 import Transacao from "../../components/Transacao/Transacao"
 import { useNavigate } from "react-router"
-import { useState } from "react"
+import { get } from "../../services/api"
+import { useEffect, useState } from "react"
 
 export default function Transacoes() {
-    const navigate = useNavigate();
-    const getHistoricoDoStorage = () => {
-        try {
-            const data = localStorage.getItem("historico");
-            return data ? JSON.parse(data) : [];
-        } catch (e) {
-            localStorage.removeItem("historico");
-            return [];
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const [transactions, setTransactions] = useState<any[]>([]);
+
+    useEffect(() => {
+        async function getHistory() {
+            try {
+                return await get("/history")
+            } catch (error) {
+                console.error(error)
+            }
         }
-    };
-    const [historico] = useState(getHistoricoDoStorage())
+        getHistory().then((data) => {
+            if (data && Array.isArray(data.all_transactions)) {
+                setTransactions([...data.all_transactions].reverse())
+            } else {
+                setTransactions([])
+            }
+        });
+    }, []);
+
+
+
+    const navigate = useNavigate();
 
     return (
         <div className="container-transacoes">
@@ -30,14 +44,14 @@ export default function Transacoes() {
             </div>
 
             <div className="historico" id="historico">
-                {historico != null ? historico.map((transaction: { id: string; data: number; saldo: number; tipo: string; valor: number }) => (
+                {transactions != null ? [...transactions].map((transaction: { id?: string; timestamp: number; current_balance: number; type: string; value: number }, index: number) => (
                     <Transacao
-                        key={transaction.id}
-                        data={transaction.data}
-                        id={transaction.id}
-                        saldo={transaction.saldo}
-                        texto={transaction.tipo}
-                        valor={transaction.valor}
+                        key={transaction.id || index.toString()}
+                        data={transaction.timestamp}
+                        id={transaction.id || index.toString()}
+                        saldo={transaction.current_balance}
+                        texto={transaction.type}
+                        valor={transaction.value}
                     />
                 )) : ""}
             </div>
