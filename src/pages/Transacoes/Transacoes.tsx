@@ -2,7 +2,6 @@ import "./Transacoes.css"
 import Botao from "../../components/Botao/Botao"
 import Documentacao from "../../components/Documentacao/Documentacao"
 import Topbar from "../../components/Topbar/Topbar"
-import { Users } from "../../mock/User"
 import Transacao from "../../components/Transacao/Transacao"
 import { useNavigate } from "react-router"
 import { useState } from "react"
@@ -22,7 +21,7 @@ export default function Transacoes() {
 
     return (
         <div className="container-transacoes">
-            <Topbar user={Users.user1}>
+            <Topbar>
                 <Documentacao fixo={false} />
             </Topbar>
 

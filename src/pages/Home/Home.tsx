@@ -14,7 +14,7 @@ export default function Home() {
         <div className='containerHome'>
             <Topbar><Documentacao fixo={false} /></Topbar>
             <div className='containerSaldo'>
-                <CardSaldo boxSide='right' texto='O que você deseja fazer?' saldo={Number(localStorage.getItem("saldo"))}></CardSaldo>
+                <CardSaldo boxSide='right' texto='O que você deseja fazer?' saldo={saldo}></CardSaldo>
             </div>
             <div className='containerBotoes'>
                 <BotaoHome texto='Depositar' id='1' onClick={() => navigate('/depositar')}></BotaoHome>
