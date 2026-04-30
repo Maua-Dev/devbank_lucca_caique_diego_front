@@ -6,27 +6,25 @@ import { useNavigate } from "react-router";
 import { useState } from "react";
 import Cedula from "../../components/Cedula/Cedula";
 import Botao from "../../components/Botao/Botao";
-import "./Depositar.css";
+import "./Sacar.css"
 
-export default function Depositar() {
+export default function Sacar() {
     const navigate = useNavigate();
     const [valor, setValor] = useState(0);
     return (
-        <div className="containerDepositar">
+        <div className="containerSacar">
             <Topbar user={Users.user1}>
                 <Documentacao fixo={false} />
             </Topbar>
             <div className="containerSaldo">
                 <CardSaldo
                     boxSide="left"
-                    texto={`Quantidade depositada: R$ ${valor}`}
+                    texto={`Quantidade sacada: R$ ${valor}`}
                     saldo={1000}
                 ></CardSaldo>
             </div>
             <div className="container-cedulas">
-                <div className="p-cedulas">
-                    <p>Selecione as cédulas e a quantidade que você deseja.</p>
-                </div>
+                <div className="p-cedulas"><p>Selecione as cédulas e a quantidade que você deseja.</p></div>
                 <Cedula
                     valor={2}
                     add={() => {
@@ -77,9 +75,9 @@ export default function Depositar() {
                     remove={() => setValor(valor <= 199 ? valor : valor - 200)}
                 />
             </div>
-            <div className="container-botoes-depositar">
+            <div className="container-botoes-sacar">
                 <Botao texto="Voltar" onClick={() => navigate("/home")}></Botao>
-                <Botao texto="Depositar"></Botao>
+                <Botao texto="Sacar"></Botao>
             </div>
         </div>
     );

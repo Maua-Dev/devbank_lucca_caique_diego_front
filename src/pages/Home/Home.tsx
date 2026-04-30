@@ -21,7 +21,7 @@ export default function Home() {
                 <BotaoHome texto='Transações' id='3' onClick={() => navigate('/transacoes')}></BotaoHome>
             </div>
             <div className='containerInput'>
-                <InputAPI value='https://y5klzz3x33bqv3kytn4swkcwji0vlfhw.lambda-url.us-east-1.on.aws/' readOnly={true}> <FaPencilAlt ></FaPencilAlt></InputAPI>
+                <InputAPI value='https://y5klzz3x33bqv3kytn4swkcwji0vlfhw.lambda-url.us-east-1.on.aws' onChange={()=> {}} readOnly={true}> <FaPencilAlt ></FaPencilAlt></InputAPI> 
             </div>
         </div>
 
