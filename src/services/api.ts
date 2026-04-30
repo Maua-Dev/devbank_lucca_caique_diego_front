@@ -6,10 +6,14 @@ export async function get(endpoint: string = "") {
     return data;
 }
 
-export async function getUser() {
-    return await get();
-}
-
-export async function getHistory(endpoint: string) {
-    return await get(endpoint);
+export async function post(endpoint: string, body: any) {
+    const response = await fetch(`${BASE_URL}${endpoint}`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+    });
+    const data = await response.json();
+    return data;
 }
