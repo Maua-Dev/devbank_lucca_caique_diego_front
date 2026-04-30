@@ -13,11 +13,12 @@ export default function Login() {
     const [fixo] = useState(true)
     const navigate = useNavigate()
 
-    function handleLocalStorage(): void {
+    function handleStorage(value: string): void {
         localStorage.setItem("saldo", "1000");
         localStorage.setItem("nome", Users.user1.nome);
         localStorage.setItem("agencia", Users.user1.agencia);
         localStorage.setItem("conta", Users.user1.conta);
+        sessionStorage.setItem("URL_API", value)
     }
 
     function handleLogin(url: string) {
@@ -39,7 +40,7 @@ export default function Login() {
 
                 <InputAPI onChange={(e) => setValue(e.target.value)} value={value}></InputAPI>
                 <p className="p-aviso" id="p-aviso"></p>
-                <Botao texto="Entrar" onClick={() => { handleLogin(value); handleLocalStorage() }}></Botao>
+                <Botao texto="Entrar" onClick={() => { handleLogin(value); handleStorage(value) }}></Botao>
             </div>
         </div>
     )
