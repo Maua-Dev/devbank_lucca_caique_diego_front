@@ -9,17 +9,17 @@ interface ITransacao {
 }
 
 function handleCardColor(texto: string): string {
-    return texto === "Deposito" ? "green" : "red";
+    return texto === "Depósito" ? "green" : "red";
 }
 
 export default function Transacao({ texto, valor, data, saldo, id }: ITransacao) {
     const dataNova = new Date(data);
-    const cor = handleCardColor(texto);
-
+    const novoTexto = texto == "withdraw" ? "Saque" : "Depósito"
+    const cor = handleCardColor(novoTexto);
     return (
         <div className="card" id={id}>
             <div className="acao" style={{ background: cor }}>
-                <p>{texto}</p>
+                <p>{novoTexto}</p>
             </div>
             <div className="inferior">
                 <div className="valor">
