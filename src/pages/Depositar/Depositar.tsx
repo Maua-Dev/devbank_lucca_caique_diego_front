@@ -1,4 +1,3 @@
-import { Users } from "../../mock/User";
 import Topbar from "../../components/Topbar/Topbar";
 import CardSaldo from "../../components/CardSaldo/CardSaldo";
 import Documentacao from "../../components/Documentacao/Documentacao";
@@ -29,7 +28,7 @@ export default function Depositar() {
 
     return (
         <div className="containerDepositar">
-            <Topbar user={Users.user1}>
+            <Topbar>
                 <Documentacao fixo={false} />
             </Topbar>
             <div className="containerSaldo">
