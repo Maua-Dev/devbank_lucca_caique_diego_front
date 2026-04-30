@@ -7,10 +7,26 @@ import { useState } from "react";
 import Cedula from "../../components/Cedula/Cedula";
 import Botao from "../../components/Botao/Botao";
 import "./Depositar.css";
+import { handleTransaction } from "../../func";
+import { transactions } from "../../mock/Transactions";
 
 export default function Depositar() {
     const navigate = useNavigate();
     const [valor, setValor] = useState(0);
+    const getHistoricoDoStorage = () => {
+        try {
+            const data = localStorage.getItem("historico");
+            return data ? JSON.parse(data) : [];
+        } catch (e) {
+            localStorage.removeItem("historico");
+            return [];
+        }
+    };
+
+    const [historico, setHistorico] = useState(getHistoricoDoStorage())
+    const data = new Date().getTime()
+    const saldo: number = Number(localStorage.getItem("saldo"))
+
     return (
         <div className="containerDepositar">
             <Topbar user={Users.user1}>
@@ -20,7 +36,7 @@ export default function Depositar() {
                 <CardSaldo
                     boxSide="left"
                     texto={`Quantidade depositada: R$ ${valor}`}
-                    saldo={1000}
+                    saldo={saldo}
                 ></CardSaldo>
             </div>
             <div className="container-cedulas">
@@ -79,9 +95,13 @@ export default function Depositar() {
             </div>
             <div className="container-botoes-depositar">
                 <Botao texto="Voltar" onClick={() => navigate("/home")}></Botao>
-                <Botao texto="Depositar"></Botao>
+                <Botao texto="Depositar" onClick={() => {
+                    handleTransaction("Deposito", valor, data, saldo + valor);
+                    setHistorico([...historico]);
+                    localStorage.setItem("historico", JSON.stringify([...transactions]));
+                }}></Botao>
             </div>
-        </div>
+        </div >
     );
 }
 

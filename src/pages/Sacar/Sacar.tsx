@@ -7,10 +7,26 @@ import { useState } from "react";
 import Cedula from "../../components/Cedula/Cedula";
 import Botao from "../../components/Botao/Botao";
 import "./Sacar.css"
+import { handleTransaction } from "../../func";
+import { transactions } from "../../mock/Transactions";
 
 export default function Sacar() {
     const navigate = useNavigate();
     const [valor, setValor] = useState(0);
+    const getHistoricoDoStorage = () => {
+        try {
+            const data = localStorage.getItem("historico");
+            return data ? JSON.parse(data) : [];
+        } catch (e) {
+            localStorage.removeItem("historico");
+            return [];
+        }
+    };
+
+    const [historico, setHistorico] = useState(getHistoricoDoStorage())
+    const data: number = new Date().getTime()
+    const saldo: number = Number(localStorage.getItem("saldo"))
+
     return (
         <div className="containerSacar">
             <Topbar user={Users.user1}>
@@ -20,7 +36,7 @@ export default function Sacar() {
                 <CardSaldo
                     boxSide="left"
                     texto={`Quantidade sacada: R$ ${valor}`}
-                    saldo={1000}
+                    saldo={Number(localStorage.getItem("saldo"))}
                 ></CardSaldo>
             </div>
             <div className="container-cedulas">
@@ -77,7 +93,11 @@ export default function Sacar() {
             </div>
             <div className="container-botoes-sacar">
                 <Botao texto="Voltar" onClick={() => navigate("/home")}></Botao>
-                <Botao texto="Sacar"></Botao>
+                <Botao texto="Sacar" onClick={() => {
+                    handleTransaction("Saque", valor, data, valor > saldo ? 0 : saldo-valor);
+                    setHistorico([...historico]);
+                    localStorage.setItem("historico", JSON.stringify([...transactions]));
+                }}></Botao>
             </div>
         </div>
     );

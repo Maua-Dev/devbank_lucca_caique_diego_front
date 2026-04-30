@@ -9,6 +9,7 @@ import './Home.css'
 
 export default function Home() {
     const navigate = useNavigate()
+    const saldo: number = Number(localStorage.getItem("saldo"))
     return (
         <div className='containerHome'>
             <Topbar><Documentacao fixo={false} /></Topbar>
