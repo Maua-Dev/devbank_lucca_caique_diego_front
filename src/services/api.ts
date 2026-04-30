@@ -5,3 +5,7 @@ export async function get(endpoint: string = "") {
     const data = await response.json();
     return data;
 }
+
+export async function getUser() {
+    return await get();
+}
