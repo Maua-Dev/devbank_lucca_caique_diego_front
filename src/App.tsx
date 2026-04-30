@@ -6,7 +6,6 @@ import Home from './pages/Home/Home';
 import Depositar from './pages/Depositar/Depositar';
 
 function App() {
-
     return (
         <>
             <BrowserRouter>
