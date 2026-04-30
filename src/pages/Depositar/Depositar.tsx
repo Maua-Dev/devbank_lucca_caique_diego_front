@@ -10,7 +10,7 @@ import "./Depositar.css"
 
 export default function Depositar() {
     const navigate = useNavigate();
-    const [valor, setValor] = useState(1);
+    const [valor, setValor] = useState(0);
     return (
         <div className="containerDepositar">
             <Topbar user={Users.user1}>
@@ -76,7 +76,7 @@ export default function Depositar() {
                 />
             </div>
             <div className="container-botoes-depositar">
-                <Botao texto="Voltar"></Botao>
+                <Botao texto="Voltar" onClick={() => navigate("/home")}></Botao>
                 <Botao texto="Depositar"></Botao>
             </div>
         </div>
