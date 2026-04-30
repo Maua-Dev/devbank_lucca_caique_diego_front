@@ -1,14 +1,16 @@
+import { useNavigate } from "react-router";
 import "./InputAPI.css"
 import { ChangeEvent, PropsWithChildren, ReactNode } from "react"
 
 interface IInputAPI {
     value?: string;
-    onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+    onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
     children?: PropsWithChildren<ReactNode>;
     readOnly?: boolean;
 }
 
 export default function InputAPI({ value, onChange, children, readOnly }: IInputAPI) {
+    const navigate = useNavigate()
     return (
         <div className="container-input-api">
             <input
@@ -21,7 +23,7 @@ export default function InputAPI({ value, onChange, children, readOnly }: IInput
                 onChange={onChange}
                 readOnly={readOnly}
             />
-            {children ? <button id="buttonChildren">{children}</button> : null}
+            {children ? <button id="buttonChildren" onClick={() => navigate("/")}>{children}</button> : null}
         </div>
     )
 }

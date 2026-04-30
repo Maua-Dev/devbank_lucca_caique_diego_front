@@ -1,4 +1,3 @@
-import { Users } from '../../mock/User'
 import BotaoHome from '../../components/BotaoHome/BotaoHome'
 import Topbar from '../../components/Topbar/Topbar'
 import InputAPI from '../../components/InputAPI/InputAPI'
@@ -13,9 +12,9 @@ export default function Home() {
     const saldo: number = Number(localStorage.getItem("saldo"))
     return (
         <div className='containerHome'>
-            <Topbar user={Users.user1}><Documentacao fixo={false} /></Topbar>
+            <Topbar><Documentacao fixo={false} /></Topbar>
             <div className='containerSaldo'>
-                <CardSaldo boxSide='right' texto='O que você deseja fazer?' saldo={saldo}></CardSaldo>
+                <CardSaldo boxSide='right' texto='O que você deseja fazer?' saldo={Number(localStorage.getItem("saldo"))}></CardSaldo>
             </div>
             <div className='containerBotoes'>
                 <BotaoHome texto='Depositar' id='1' onClick={() => navigate('/depositar')}></BotaoHome>
@@ -23,7 +22,7 @@ export default function Home() {
                 <BotaoHome texto='Transações' id='3' onClick={() => navigate('/transacoes')}></BotaoHome>
             </div>
             <div className='containerInput'>
-                <InputAPI value='https://y5klzz3x33bqv3kytn4swkcwji0vlfhw.lambda-url.us-east-1.on.aws/' onChange={() => { }} readOnly={true}> <FaPencilAlt ></FaPencilAlt></InputAPI>
+                <InputAPI value='https://y5klzz3x33bqv3kytn4swkcwji0vlfhw.lambda-url.us-east-1.on.aws' onChange={()=> {}} readOnly={true}> <FaPencilAlt ></FaPencilAlt></InputAPI> 
             </div>
         </div>
 
